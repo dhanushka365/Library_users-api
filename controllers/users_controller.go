@@ -1,9 +1,7 @@
 package controllers
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -19,7 +17,7 @@ func GetUser(c *gin.Context) {
 func CreateUser(c *gin.Context) {
 	var user users.User
 	//Invalid json body
-	if err := c.ShouldBindJSON(&user);err !=nil{
+	if err := c.ShouldBindJSON(&user); err != nil {
 		fmt.Println(err)
 		//TODO:return bad request to the caller
 		return
